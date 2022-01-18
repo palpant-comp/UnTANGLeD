@@ -4,9 +4,9 @@
 
 KEY FILES: 
 
-1. MultiXcan_matrix.tsv.gz - Unprocessed data containing all MultiXcan gene-trait associations 
-2. Consensus_matrix.tsv.gz - Consensus matrix generated according to the optimised pipeline 
-3. Cor_mat.tsv.gz - Correlation between all genes based on MultiXcan gene-trait associations
+1. full_matrix.rds - Unprocessed data containing all MultiXcan gene-trait associations 
+2. RC_consensus_matrix.rds - Consensus matrix generated according to the optimised pipeline 
+3. base_gene_correlation.rds - Correlation between all genes based on MultiXcan gene-trait associations
 
 CODE DESCRIPTION:
 
