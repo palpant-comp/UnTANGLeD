@@ -10,9 +10,8 @@ KEY FILES:
 
 CODE DESCRIPTION:
 
-1. Pre-Processing, Normalisation and Initial Clustering using Seurat 
-2. Consensus Matrix generation
-3. Consensus Matrix compilation and hierarchical clustering 
-4. Global Enrichment Analyses
-5. Prediction of trait associated genes
-6. Prediction of causal genes analysis
+1. Preprocessing_clustering.R - Pre-Processing, Normalisation and Initial Clustering using Seurat 
+2. Consensus_matrix_calculation.R - Consensus Matrix generation
+3. Hierarchical_clustering_GO_enrichment.R - Consensus Matrix compilation, hierarchical clustering and GO enrichment of clusters
+4. prediction_GWAS_genes.R - Prediction of trait associated genes 
+5. fine_mapping_POPS_proximity.R - Prediction of causal genes analysis
