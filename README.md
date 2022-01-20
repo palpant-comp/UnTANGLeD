@@ -4,9 +4,9 @@
 
 KEY FILES: 
 
-1. full_matrix.rds - Unprocessed data containing all MultiXcan gene-trait associations 
-2. RC_consensus_matrix.rds - Consensus matrix generated according to the optimised pipeline 
-3. base_gene_correlation.rds - Correlation between all genes based on MultiXcan gene-trait associations
+1. Full_MultiXcan_matrix.txt.gz - Unprocessed data containing all MultiXcan gene-trait associations 
+2. Gene_Consensus_matrix.txt.gz - Consensus matrix generated according to the optimised pipeline 
+3. Gene_Correlation_matrix.txt.gz - Correlation between all genes based on MultiXcan gene-trait associations
 
 CODE DESCRIPTION:
 
