@@ -1,7 +1,5 @@
 # UnTANGLeD
 
-![GitHub release (by tag)](https://img.shields.io/github/downloads/palpant-comp/UnTANGLeD/v1.0.0/total)
-
 # Data and code for manuscript 'Organisation of Gene Programs Revealed by Unsupervised Analysis of Diverse Gene-Trait Associations'.
    D. Mizikovsky, M. Naval Sanchez, C. Nefzger, G. Cuellar Partida, N. J. Palpant
 
