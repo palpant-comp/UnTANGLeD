@@ -56,28 +56,32 @@
   ### Create Seurat Object ###
   Sobject <- CreateSeuratObject(counts = t3, min.cells = 0, min.features  = 0, project = "genometrial")
   
-  ### RC normalization##
+  ### RC normalization ##
   t6 <- NormalizeData(object = Sobject, normalization.method = "RC", margin = 1, scale.factor = 1000)
   g <- t(as.matrix(GetAssayData(t6, slot = 'data')))
-
   
+  # Recreate Seurat object with RC-normalized data (g)
   Sobject <- CreateSeuratObject(counts = g, min.cells = 0, min.features  = 0, project = "genometrial")
-  t6 <- NormalizeData(object = Sobject, normalization.method = "LogNormalize", margin = 1, scale.factor = 1000)
-  t6 <- SetAssayData(t6, slot = 'data', g)
-  ### Find Variable Features ###
-  t6 <- FindVariableFeatures(t6, selection.method = "vst", mean.cutoff = c(0.1, 10), dispersion.cutoff = c(0.5,20), nfeatures = 1394)
-  head(VariableFeatures(t6))
-  length(VariableFeatures(t6))
   
-  ## Scale Data ## 
-  t6 <- ScaleData(object = t6)
+  # Redundant: this log-normalizes, but it's overwritten immediately after
+  # t6 <- NormalizeData(object = Sobject, normalization.method = "LogNormalize", margin = 1, scale.factor = 1000)
+  
+  t6 <- Sobject  # Continue with object holding raw/RC-normalized matrix
+  t6 <- SetAssayData(t6, slot = 'data', g)
+  
+  ### Find Variable Features (Not used later) ###
+  # t6 <- FindVariableFeatures(t6, selection.method = "vst", mean.cutoff = c(0.1, 10), dispersion.cutoff = c(0.5,20), nfeatures = 1394)
+  # head(VariableFeatures(t6))
+  # length(VariableFeatures(t6))
+  
+  ## Scale Data (Overwritten immediately) ##
+  # t6 <- ScaleData(object = t6)
   t6 <- SetAssayData(object = t6, new.data = g, slot = 'scale.data')
   
-  #PCA
+  # PCA
   t7 <- RunPCA(object = t6, verbose = F)
   p1 <- DimPlot(object = t7, dims = c(1,2), reduction = "pca") 
   p1
-  
 
   ## ACTUAL Clustering ##
   t8 <- FindNeighbors(t7, reduction = "pca", dims = 1:10)
